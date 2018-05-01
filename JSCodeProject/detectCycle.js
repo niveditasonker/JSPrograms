@@ -37,7 +37,7 @@ LinkedList.prototype.detectLoop = function(){
 			console.log("Cycle found");
 			return 1;
 		}else{
-			console.log("No Cycle found");
+//			console.log("No Cycle found");
 		}
 	}
 	return 0;
@@ -65,7 +65,7 @@ LinkedList.prototype.detectCycle = function(){
 			return 1;
 		}
 		temp = temp.next;
-		console.log(cycle);
+//		console.log(cycle);
 	}
 }
 var ll = new LinkedList();
@@ -77,5 +77,5 @@ ll.insert(15);
 ll.insert(10);
 ll.printList();
 ll.head.next.next.next.next = ll.head;
-//ll.detectLoop();
+ll.detectLoop();
 ll.detectCycle();

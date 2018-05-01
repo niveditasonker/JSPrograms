@@ -16,7 +16,7 @@ function swapNumbers(arr){
 			arr[j] = temp;
 		}
 	}
-//		console.log(arr);
+		console.log(arr);
 		
 	var pos = i+1;
 	var neg = 0;

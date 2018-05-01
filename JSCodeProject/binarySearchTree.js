@@ -45,6 +45,7 @@ BinarySearch.prototype.printTree = function(){
 	while(curr){
 		str += curr.value + " ";
 	}
+	return str;
 }
 
 BinarySearch.prototype.inorder = function(node){
@@ -63,16 +64,16 @@ BinarySearch.prototype.preorder = function(node){
 	if(node!=null){
 		str += node.value +" ";
 //		console.log(node.value);
-		this.inorder(node.left);
-		this.inorder(node.right);
+		this.preorder(node.left);
+		this.preorder(node.right);
 	}
 	console.log("Preorder: "+ str);
 }
 
 BinarySearch.prototype.postorder = function(node){
 	if(node!=null){
-		this.inorder(node.left);
-		this.inorder(node.right);
+		this.postorder(node.left);
+		this.postorder(node.right);
 		str += node.value +" ";
 //		console.log(node.value);
 	}
@@ -140,10 +141,10 @@ bst.push(4);
 bst.push(1);
 bst.push(6)
 bst.push(5);;
-//console.log(global.value);
+
 //bst.inorder(bst.root);
-bst.preorder(bst.root);
-bst.postorder(bst.root);
+//bst.preorder(bst.root);
+//bst.postorder(bst.root);
 bst.maxNode(bst.root);
 //bst.remove(4); 
-//bst.printTree();
+bst.printTree();

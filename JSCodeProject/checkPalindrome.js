@@ -7,9 +7,9 @@ console.log(t);
 function isPalindrome(strn){
 	
 	var len = Math.floor(strn.length/2);
-	console.log(len);
+//	console.log(len);
 	for(var i=0;i<len;i++){
-		console.log(i,strn[i],strn[strn.length-i-1]);
+//		console.log(i,strn[i],strn[strn.length-i-1]);
 		if(strn[i] !== strn[strn.length-i-1]){
 			return false;
 		}

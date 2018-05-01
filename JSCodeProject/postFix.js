@@ -1,5 +1,5 @@
-//var str = "235*+8-";
-var str = "23*+";
+var str = "235*+8-";
+//var str = "23*+";
 
 console.log(evaluatePostFix(str));
 
@@ -10,9 +10,9 @@ function evaluatePostFix(exp){
 		
 		var c = exp.charAt(i);
 		if(!isNaN(c)){
-			console.log(c - '0');
+//			console.log(c - '0');
 			stack.push(c-'0');
-			console.log(stack);
+//			console.log(stack);
 		}else{
 			var val1 = stack.pop();
 			var val2 = stack.pop();

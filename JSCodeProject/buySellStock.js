@@ -7,14 +7,14 @@ getProfit(arr);
 
 function getProfit(a){
 	var min = a[0];
-    var diff;
+//    var diff;
     var max_diff = 0;
     
 	for(var i=0;i<a.length;i++){
     	if(a[i]<min){
         	min = a[i];
         }
-        diff = a[i]-min;
+    	var diff = a[i]-min;
         //alert(diff,i);
         if(max_diff < diff){
         	max_diff = diff;

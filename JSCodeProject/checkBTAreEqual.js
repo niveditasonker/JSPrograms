@@ -58,5 +58,5 @@ tree.root2.right = new Node(3);
 tree.root2.left.left = new Node(4);
 tree.root2.left.right = new Node(5);
 
-//console.log(tree.areIdentical(tree.root1,tree.root2));
+console.log(tree.areIdentical(tree.root1,tree.root2));
 tree.findDiffNode(tree.root1,tree.root2);
