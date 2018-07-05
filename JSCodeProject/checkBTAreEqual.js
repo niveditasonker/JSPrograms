@@ -46,17 +46,30 @@ BinarySearch.prototype.findDiffNode = function(t1,t2){
 var tree = new BinarySearch();
 //var tree2 = new BinarySearch();
 
+//tree.root1 = new Node(1);
+//tree.root1.left = new Node(2);
+//tree.root1.right = new Node(6);
+//tree.root1.left.left = new Node(4);
+//tree.root1.left.right = new Node(5);
+//
+//tree.root2 = new Node(1);
+//tree.root2.left = new Node(2);
+//tree.root2.right = new Node(6);
+//tree.root2.left.left = new Node(4);
+//tree.root2.left.right = new Node(5);
+
+
 tree.root1 = new Node(1);
 tree.root1.left = new Node(2);
-tree.root1.right = new Node(6);
-tree.root1.left.left = new Node(4);
-tree.root1.left.right = new Node(5);
+tree.root1.right = new Node(1);
+//tree.root1.left.left = new Node(4);
+//tree.root1.left.right = new Node(5);
 
 tree.root2 = new Node(1);
-tree.root2.left = new Node(2);
-tree.root2.right = new Node(3);
-tree.root2.left.left = new Node(4);
-tree.root2.left.right = new Node(5);
+tree.root2.left = new Node(1);
+tree.root2.right = new Node(2);
+//tree.root2.left.left = new Node(4);
+//tree.root2.left.right = new Node(5);
 
 console.log(tree.areIdentical(tree.root1,tree.root2));
 tree.findDiffNode(tree.root1,tree.root2);

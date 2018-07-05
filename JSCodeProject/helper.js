@@ -17,6 +17,11 @@ var third = Number.MIN_SAFE_INTEGER - 1;
 
 //var ks = Object.keys(data).sort(function(a,b){return data[a]-data[b]});
 
+function flatten(arr) {
+	  return arr.reduce(function (flat, toFlatten) {
+	    return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
+	  }, []);
+	}
 
 function sortNumber(a,b) {
     return a - b;

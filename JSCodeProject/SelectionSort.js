@@ -1,10 +1,12 @@
-var arr = ["11","33","56","78","25","9"];
-var nums = ["11","33","56","78","25","9"];
+var arr = [11,33,56,78,25,9];
+var nums = [11,33,56,78,25,9];
+//var nums = ["11","33","56","78","25","9"];
 
 var n = arr.length;
 for(var i=0;i<nums.length-1;i++){
+	var min = i;
 	for(var j=i+1;j<nums.length;j++){
-		var min = i;
+	
 		if(nums[j]<nums[min]){
 //		if(nums[j]>nums[min]){
 			min = j;
@@ -14,7 +16,7 @@ for(var i=0;i<nums.length-1;i++){
 		nums[i] = temp;
 	}
 }
-//console.log(nums);
+console.log(nums);
 //console.log(arr);
 selectionSort(arr);
 

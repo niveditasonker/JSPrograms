@@ -37,3 +37,25 @@ function mergeSortedArray(a, b) {
 	}
 
 console.log(mergeTwo(num1, num2));
+
+
+var a = [1,2,3,0,0,0];
+var b = [2,5,6];
+
+console.log(combineArrays(a, b));
+
+function combineArrays(nums1, nums2){
+var m = 3;
+var n = 3;
+//n1.length = 6;
+//n2.length = 3;
+	
+    console.log(m,n,nums1.length, nums2.length);
+    while (m > 0 || n > 0) {
+        if (m > 0 && n > 0)
+            if (nums1[m-1] > nums2[n-1]) nums1[m+n-1] = nums1[--m]; 
+            else nums1[m+n-1] = nums2[--n];
+        else if (n > 0) nums1[m+n-1] = nums2[--n];
+        else return;
+    }
+}

@@ -53,16 +53,16 @@ var n5 = new TreeLinkNode(5);
 var n6 = new TreeLinkNode(15);
 var n7 = new TreeLinkNode(7);
 
-var tree = new BinarySearch();
-//var tree2 = new BinarySearch();
-
-tree.root1 = new TreeLinkNode(1);
-tree.root1.left = new TreeLinkNode(2);
-tree.root1.right = new TreeLinkNode(3);
-//tree.root1.left.left = new Node(3);
-tree.root1.left.right = new TreeLinkNode(5);
-//tree.root1.right.left = new Node(4);
-tree.root1.right.right = new TreeLinkNode(4);
+//var tree = new BinarySearch();
+////var tree2 = new BinarySearch();
+//
+//tree.root1 = new TreeLinkNode(1);
+//tree.root1.left = new TreeLinkNode(2);
+//tree.root1.right = new TreeLinkNode(3);
+////tree.root1.left.left = new Node(3);
+//tree.root1.left.right = new TreeLinkNode(5);
+////tree.root1.right.left = new Node(4);
+//tree.root1.right.right = new TreeLinkNode(4);
 
 
 n1.left = n2;
@@ -73,4 +73,4 @@ n3.left = n6;
 n3.right = n7;
 
 
-console.log(righSideView(tree.root1));
+console.log(righSideView(n1));

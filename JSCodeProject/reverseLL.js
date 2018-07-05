@@ -92,7 +92,7 @@ LinkedList.prototype.removeNode = function(head,n){
 }
 
 console.log(ll.printList());
-//ll.reverseList();
+ll.reverseList();
 //console.log(ll.printList());
 //console.log(ll.recursiveReverseList(ll.head, ll.head.prev));
 console.log(ll.removeNode(ll.head,2));

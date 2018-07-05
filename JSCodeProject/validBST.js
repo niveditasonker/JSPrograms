@@ -1,5 +1,3 @@
-
-
 var minimum = -4294967296;
 var maximum = 4294967296;
 
@@ -15,26 +13,6 @@ function BinarySearch(){
 	this.root = null;
 }
 
-
-//BinarySearch.prototype.checkBST = function(node){
-////	console.log(node);
-//	return (bst.isBSTUtil(node, minimum, maximum));
-//}
-//
-//BinarySearch.prototype.isBSTUtil = function(nnode, min, max){
-////	console.log(nnode);
-//	if(nnode == null){
-//		return true;
-//	}
-////	
-//	if(nnode.data< min || nnode.data > max){
-//		return;
-//	}
-////	
-//	return (bst.isBSTUtil(nnode.left,min, nnode.data-1) && bst.isBSTUtil(nnode.right,nnode.data+1,max));
-//
-//}
-
 BinarySearch.prototype.isBST1 = function(root) {
 	if (root != null) {
 		if (!bst.isBST1(root.left))
@@ -47,20 +25,6 @@ BinarySearch.prototype.isBST1 = function(root) {
 	}
 	return true;
 }
-
-
-
-
-//var c=bst.checkBST(bst.root);
-//var c = bst.isBST1(bst.root);
-//console.log(c);
-
-//if(c){
-//	console.log("Valid bst");
-//}else{
-//	console.log("Not valid bst");
-//}
-
 
 
 BinarySearch.prototype.isBST2 = function(root, min, max) {

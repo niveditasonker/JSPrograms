@@ -1,6 +1,8 @@
 //var numArr = [1,1,1,2,2,3];
-var numArr = [3,2,1,5,6,4];
-var lelem = 2;
+//var numArr = [3,2,1,5,6,4];
+var numArr = [3,2,3,1,2,4,5,5,6];
+//var lelem = 2;
+var lelem = 4;
 
 sortArr(numArr);
 function sortArr(nums){

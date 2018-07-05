@@ -142,7 +142,7 @@ bst.push(1);
 bst.push(6)
 bst.push(5);;
 
-//bst.inorder(bst.root);
+bst.inorder(bst.root);
 //bst.preorder(bst.root);
 //bst.postorder(bst.root);
 bst.maxNode(bst.root);

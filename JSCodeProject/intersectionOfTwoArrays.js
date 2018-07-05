@@ -7,9 +7,11 @@ function intersect(a,b){
 	var arr = [];
 
 	while(a.length > 0 && b.length > 0){
-		if(a[0] < b[0]){
-			a.shift();
-		}else if(a[0] > b[0]){
+		if(a[0] != b[0]){
+//		if(a[0] < b[0] || a[0] > b[0]){
+//		if(a[0] < b[0]){
+//			a.shift();
+//		}else if(a[0] > b[0]){
 			a.shift();
 		}else{
 			arr.push(a.shift());

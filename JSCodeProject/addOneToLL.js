@@ -64,8 +64,8 @@ LinkedList.prototype.addOne = function(){
 }
 
 var ll = new LinkedList();
-ll.insert(2);
-ll.insert(4);
+ll.insert(9);
+ll.insert(9);
 ll.insert(6);
 ll.insert(9);
 

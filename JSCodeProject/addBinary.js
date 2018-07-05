@@ -1,9 +1,9 @@
-var a = "11";
-var b = "1";
-//var a = "1010";
-//var b = "1011"
+//var a = "11";
+//var b = "1";
+var a = "1010";
+var b = "1011"
 
-console.log(addBinary(a,b));
+console.log("Result: "+addBinary(a,b));
 
 function addBinary(n1,n2){
 	var i = n1.length-1;
@@ -12,13 +12,15 @@ function addBinary(n1,n2){
 	var result = "";
 	
 	while(i>=0 || j>=0){
-		console.log(n2[j]|0);
+//		console.log(n2[j]|0);
 		var m = i<0?0:n1[i]|0;
 		var n = j<0?0:n2[j]|0;
-//		console.log(i,j,n1[i], n2[j], m,n);
+		console.log(i,j,n1[i], n2[j], m,n);
 		carry += m+n;
+		console.log(carry);
 		result = carry%2 +result;
 		carry = carry/2 | 0;
+		console.log(carry, result);
 		i--;
 		j--;
 	}

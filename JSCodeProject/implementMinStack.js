@@ -42,8 +42,11 @@ MinStack.prototype.getMin = function() {
     return min;
 };
 
-MinStack.prototype.isEmpty = function() {
-    return this.items.length == 0;
+MinStack.prototype.isEmpty1 = function() {
+    if(this.items.length == 0){
+    	return true;
+    }
+    return false;
 };
 
 MinStack.prototype.printStack = function(){

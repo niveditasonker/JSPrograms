@@ -1,7 +1,7 @@
 var nums = [2,3,1,2,4,3];
-var sum = 7;
+var additon = 7;
 
-console.log(minSzArr(nums, sum));
+console.log(minSzArr(nums, additon));
 
 function minSzArr(n, target){
 	var sum = 0;
@@ -28,7 +28,7 @@ var k=3;
 //var k = 1;
 console.log(maxSzArr(nArr, k));
 
-function maxSzArr(n, target){
+function maxSzArr(n, k){
 	
 	var subArrlen = 0;
 	var sum = 0;
@@ -39,7 +39,7 @@ function maxSzArr(n, target){
 		if(!map.hasOwnProperty(sum)){
 			map[sum] = i;
 		}
-		
+		console.log("k: "+k, i);
 		if(map.hasOwnProperty(sum-k)){
 			subArrlen = Math.max(subArrlen,i-map[sum-k]);
 		}

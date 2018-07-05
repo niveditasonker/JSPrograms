@@ -1,8 +1,10 @@
 var str= "nitin";
+var str = "A man, a plan, a canal: Panama";
 
-console.log(isPalindrome(str));
-var t = checkPalindrome(str);
-console.log(t);
+//console.log(isPalindrome(str));
+//var t = checkPalindrome(str);
+//console.log(t);
+//console.log(isPalin(str));
 
 function isPalindrome(strn){
 	
@@ -20,3 +22,59 @@ function isPalindrome(strn){
 function checkPalindrome(strn) {
 	  return strn == strn.split('').reverse().join('');
 }
+
+
+function isPalin(str){
+	var end = str.length -1;
+	var beg = 0;
+	
+	while(beg < end){
+//		console.log(str[beg], beg, !'ab'.match(/a-zA-Z0-9/));
+//		console.log(str[end], end, !str[end].match(/a-zA-Z0-9/));
+		if(!str[beg].match(/a-zA-Z0-9/)){
+			beg++;
+		}else if(!str[end].match(/a-zA-Z0-9/)){
+			end--;
+		}else if(str[beg] != str[end]){
+			return false;
+		}
+		end--;
+		beg++;
+	}
+	return true;
+}
+
+
+var input = "aba";
+//var input = "abca";
+console.log(validPalindrome(input));
+
+function validPalindrome(input){
+	var end = input.length -1;
+	var beg = 0;
+
+	while(++beg < --end){
+		if(input.charAt(beg) != input.charAt(end)){
+			return isPalidromic(input, beg, end+1) ||isPalidromic(input, beg-1, end) ;
+		}
+		
+	}
+	return true;
+}
+
+function isPalidromic(s,l,r){
+	console.log(s, l, r);
+	while(++l < r--){
+		if(s.charAt(l) != s.charAt(r)){
+			return false;
+		}
+		
+		return true;
+	}
+}
+
+var isNumber = function(s) {
+    return /^\d+\.\d+$/.test(s);
+};
+
+//console.log(isNumber(0));

@@ -11,52 +11,6 @@ var map = {
 };
 
 var stack=[];
-//validParentheses(str);
-
-//for(var i=0;i<str.length;i++){
-//	if(str[i] == '(' || str[i] == '[' || str[i] == '{'){
-//		stack.push(str[i]);
-//	}
-//	if(str[i] == ')' || str[i] == ']' || str[i] == '}'){
-//		if(matchinPair(str[str.length-1],str[i])){
-//			stack.splice(stack.indexOf(str[i]));
-////			stack.pop(str[str.length-1]);
-//		}
-//	}
-//	
-//}
-//console.log(stack);
-//if(stack.length == 0){
-//	console.log("Balanced");
-//}else{
-//	console.log("Unbalanced");
-//}
-//
-//
-//function matchinPair(ch1,ch2){
-//	if(ch1 == '(' && ch2 == ')'){
-//		return true;
-//	}else if(ch1 == '[' && ch2 == ']'){
-//		return true;
-//	}else if(ch1 == '{' && ch2 == '}'){
-//		return true;
-//	}
-//	return false;
-//
-//}
-
-//function validParentheses(parens){
-//    
-//	  var length = parens.length / 2;
-//	  
-//	  for (var i = 0; i <= length; ++i) {
-//	    parens = parens.replace('()', '');
-//	  }
-//	  
-//	  return parens == '';
-//
-//	}
-
 function isValid(s) {
     var map = [];
     map['('] = ')';
@@ -94,3 +48,4 @@ function checkValue(map, val) {
 
 console.log(isValid('{{}[()]}'));
 console.log(isValid('{{}[]]'));
+console.log(isValid('{{}[())]]'));

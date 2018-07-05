@@ -54,5 +54,5 @@ var trapWater = function(arr){
 var tw = trapRainWater(num);
 console.log(tw);
 
-var wat = trapRainWater(num);
+var wat = trapWater(num);
 console.log(wat);

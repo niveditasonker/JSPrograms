@@ -76,7 +76,7 @@ LinkedList.prototype.addNums = function(first,sec){
 	var temp = null;
 //	var rll = null;
 	
-	while(first != null && sec != null){
+	while(first != null || sec != null){
 		var fdata = (first!=null)? first.data:0;
 		var sdata = (sec!=null)? sec.data:0;
 		sum  = carry + fdata + sdata;

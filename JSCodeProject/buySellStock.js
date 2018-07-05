@@ -1,6 +1,6 @@
-var arr = [7, 1, 5, 3, 6, 4];
+//var arr = [7, 1, 5, 3, 6, 4];
 //var arr = [7, 6, 4, 3, 1];
-//var arr = [4, 3, 6, 8, 2];
+var arr = [4, 3, 6, 8, 2];
 
 getProfit(arr);
 
