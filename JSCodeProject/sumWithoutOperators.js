@@ -1,4 +1,7 @@
-var a = 5;
+//var a = 5;
+//var b = 3;
+
+var a = 15;
 var b = 3;
 
 function sum(a, b) {

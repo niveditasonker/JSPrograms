@@ -49,7 +49,7 @@ function LongestUnivaluePath(root){
 
     postOrder(root);
 
-    console.log(res);
+//    console.log(res);
 
 }
 		  
@@ -61,13 +61,19 @@ function postOrder(root){
     var pl = postOrder(root.left);
     var pr = postOrder(root.right);
     
+    console.log("Left....");
+    console.log(pl,root.left);
+    console.log("Right....");
+    console.log(pr,root.right);
+    
     if(root.left != null && root.left.val == root.val)rl = pl + 1;
     if(root.right != null && root.right.val == root.val)rr = pr + 1;
-    console.log(pr);
+    console.log("Heere");
+//    console.log(res, rl,rr);
     res = Math.max(res, rl + rr)
     
     maxLen = Math.max(rl, rr);
-    console.log(rl, rr, (rl+rr), res, maxLen);
+//    console.log(rl, rr, (rl+rr), res, maxLen);
     
     return maxLen;
 }  

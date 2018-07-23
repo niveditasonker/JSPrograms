@@ -27,9 +27,9 @@ var flatten = function(root) {
         }
 
         p = p.right;
-//        console.log(p);
+        console.log(p);
     }
-//    return p;
+    return p;
     
 };
 
@@ -43,4 +43,4 @@ tree.right.right = new TreeNode(6);
 
 //console.log(flatten(tree));
 flatten(tree);
-console.log(tree);
+//console.log(tree);

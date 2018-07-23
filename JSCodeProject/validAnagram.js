@@ -17,3 +17,6 @@ var isAnagram1 = function(s, t) {
 	if(s.length != t.length) return false;
 }
 console.log(isAnagram(str,tstr));
+
+var g = 'f';
+console.log(g-'0');

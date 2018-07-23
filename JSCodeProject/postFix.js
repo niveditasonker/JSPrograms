@@ -10,7 +10,7 @@ function evaluatePostFix(exp){
 		
 		var c = exp.charAt(i);
 		if(!isNaN(c)){
-//			console.log(c - '0');
+			console.log(c - '0',c);
 			stack.push(c-'0');
 //			console.log(stack);
 		}else{

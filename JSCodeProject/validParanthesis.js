@@ -1,15 +1,6 @@
 var str = ['(', ')', '{', '}', '[',']'];
 console.log(str);
 
-var map = {
-		"(" : 1,
-		"[" : 2,
-		"{" : 3,
-		")" : -1,
-		"]" : -2,
-		"}" : -3,
-};
-
 var stack=[];
 function isValid(s) {
     var map = [];
@@ -26,7 +17,7 @@ function isValid(s) {
             stack.push(curr);
 //            console.log(stack);
         } else if (checkValue(map,curr)) {
-            if (!stack.length == 0 && map[stack[stack.length-1]] == curr) {
+            if (stack.length != 0 && map[stack[stack.length-1]] == curr) {
                 stack.pop();
             } else {
                 return false;

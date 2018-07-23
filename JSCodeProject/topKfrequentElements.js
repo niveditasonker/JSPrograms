@@ -42,7 +42,8 @@ function calcFreq(s){
 //	var ks = Object.keys(sdata).reduce(function(a, b){ return sdata[a] > sdata[b] ? a : b });
 //	var ks =  Object.keys(sdata).sort(function(a,b){return sdata[a]-sdata[b]})
 	var ks = Object.keys(sdata).sort(function(a, b){
-	    return b.count-a.count
+//	    return b.count-a.count;
+	    return a.count-b.count;
 	})
 	console.log(ks);
 	console.log(sdata);
@@ -56,3 +57,36 @@ function calcFreq(s){
 	}
 	console.log(newStr);
 }
+
+
+
+var frequencySort = function(s) {
+    var hash = {};
+    for (var i=0; i<s.length; i++) {
+        hash[s[i]] = hash[s[i]] || 0;
+//        console.log(hash[s[i]],s[i],hash[s[i]] || 0);
+        hash[s[i]]++;
+//        console.log(hash[s[i]],s[i],hash[s[i]] || 0);
+    }
+    console.log(hash);
+    // var keys = Object.keys(hash);
+    var arr = [];
+    for (var i in hash) {
+        arr.push([i, hash[i]]);
+    }
+    console.log(arr);
+
+    arr.sort(function(a,b) {
+        return b[1]-a[1];
+    });
+
+    var ans = "";
+    for (i=0; i<arr.length; i++) {
+    	console.log(arr[i][0],arr[i][1],arr[i][0].repeat(arr[i][1]));
+        ans = ans + arr[i][0].repeat(arr[i][1]);
+    }
+
+    return ans;
+};
+
+console.log(frequencySort(str));

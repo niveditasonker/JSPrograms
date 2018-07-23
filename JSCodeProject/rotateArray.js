@@ -20,7 +20,9 @@ function rotateByOne(arr,n){
 	for (var i=0; i<n-1;i++){
 		arr[i] = arr[i+1];
 	}
+//	console.log("i: ",i, arr[i],temp);
 	arr[i] = temp;
+//	console.log("i: ",i, arr[i],temp);
 }
 
 function rotateArray2(arr,d,n){

@@ -23,3 +23,14 @@ function sortArr(nums){
 
 console.log(numArr[numArr.length-lelem]);
 console.log(numArr[lelem-1]);
+
+console.log(contains(numArr,8));
+
+function contains(arr, x){
+	for(var i=0;i<arr.length;i++){
+		if(arr[i] == x){
+			return true;
+		}
+	}
+	return false;
+}

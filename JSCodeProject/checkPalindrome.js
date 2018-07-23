@@ -1,7 +1,7 @@
 var str= "nitin";
 var str = "A man, a plan, a canal: Panama";
 
-//console.log(isPalindrome(str));
+console.log(isPalindrome(str));
 //var t = checkPalindrome(str);
 //console.log(t);
 //console.log(isPalin(str));
