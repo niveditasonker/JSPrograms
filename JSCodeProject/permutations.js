@@ -1,4 +1,5 @@
 var nums = [1,2,3];
+//var nums = [1,1,2];
 
 var permute2 = function(nums) {
     var res = [];

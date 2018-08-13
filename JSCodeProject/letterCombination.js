@@ -1,5 +1,5 @@
-var digits = "541";
-
+var digits = "542";
+getCombinations(digits);
 //console.log(getCombinations(digits));
 function getCombinations(digits){
  	var map = [];
@@ -25,6 +25,7 @@ function getCombinations(digits){
 }
 
 function getString(digits, temp, result, map){
+	console.log("digits.length ",digits);
 	if(digits.length == 0){
         var arr = [];
         for(var i=0; i<temp.length; i++){
@@ -32,11 +33,15 @@ function getString(digits, temp, result, map){
         }
    
 		result.push(arr.join(''));
+		console.log("R ",result);
 		return;
         
 	}
 	var curr = parseInt(digits.substring(0,1));
+	
     var letters = map[curr];
+    console.log("CL",curr, letters);
+    
     for(var i=0; i<letters.length; i++){
         temp.push(letters.charAt(i));
         getString(digits.substring(1), temp, result, map);
@@ -74,11 +79,16 @@ function getPossibilities(digits, dials, outPut, pos, res) {
 		outPut.push(res);
 		return;
 	}
+	
+	console.log(digits, outPut, pos, res, digits.charAt(pos),dials[digits.charAt(pos)] );
 	if (dials[digits.charAt(pos)] !== undefined) {
 		dials[digits.charAt(pos)].forEach(function(element) {
+			
 			res+=element;
+			console.log(element, res);
 			getPossibilities(digits, dials, outPut, pos+1, res);
 			res = res.slice(0, res.length-1);
+			console.log("res: "+res);
 		});
 	}
 	return outPut;
@@ -86,4 +96,4 @@ function getPossibilities(digits, dials, outPut, pos, res) {
 
 
 var digits = "23";
-console.log(letterCombinations(digits));
+//console.log(letterCombinations(digits));

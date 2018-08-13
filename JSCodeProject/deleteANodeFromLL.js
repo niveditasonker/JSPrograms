@@ -44,9 +44,9 @@ LinkedList.prototype.recursiveDeleteNode = function(val){
 		return
 	}
 	
-	curr.data = curr.next.val;
+	curr.data = curr.next.data;
 	curr.next = curr.next.next;
 }
-//ll.deleteNode(21);
-ll.recursiveDeleteNode(21);
+ll.deleteNode(44);
+//ll.recursiveDeleteNode(21);
 console.log(ll.head);

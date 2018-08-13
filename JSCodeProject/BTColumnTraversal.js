@@ -18,14 +18,15 @@ var verticalOrder = function(root) {
 	var min = Infinity;
 	var max = -Infinity;
 	
+//	console.log(queue);
 	while(queue.length){
 		var len = queue.length;
-		
+		console.log(len);
 		for(var i=0;i<len;i++){
 			var pair = queue.shift();
 			var node = pair[0];
 			var order = pair[1];
-//			console.log(node,pair);
+			console.log(node,pair);
 			
 			hash[order] = hash[order] || [];
 			hash[order].push(node.val);

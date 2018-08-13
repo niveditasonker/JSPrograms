@@ -30,12 +30,12 @@ LinkedList.prototype.findElement = function(root, n){
 	}
 	temp = root;
 	
-//	for(var i=1;i<len-n+1;i++){
-	for(var i=0;i<len-n;i++){
+	for(var i=1;i<len-n+1;i++){
+//	for(var i=0;i<len-n;i++){
 		temp = temp.next;
 	}
 	
 	console.log(temp.data);
 }
 
-ll.findElement(ll.head,2);
+ll.findElement(ll.head,4);

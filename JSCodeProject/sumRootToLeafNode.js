@@ -15,11 +15,11 @@ var sumNumbers = function(root) {
     
     while(queue.length !== 0){
     	var node = queue.shift();
-        
+    	console.log(node.val);
         if(node.left === null && node.right === null){
         	total += parseInt(node.val);
         }
-        
+        console.log(total);
         if(node.left){
         	node.left.val = ''+node.val+node.left.val;
             queue.push(node.left);

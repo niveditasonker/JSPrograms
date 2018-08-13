@@ -24,13 +24,18 @@ BinarySearch.prototype.inorder = function(t1){
 			curr = curr.left;
 		}
 //		console.log(stack);
+//		console.log(stack.length);
 		if(stack.length == 0){
 			break;
 		}
 		
 		curr = stack.pop();
+//		console.log("Curr: ");
+//		console.log(curr);
 		result.push(curr.value);
 		curr = curr.right;
+//		console.log("Curr right: ");
+//		console.log(curr);
 	}
 	
 	return result;

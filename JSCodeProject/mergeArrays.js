@@ -21,6 +21,7 @@ function mergeSortedArray(a, b) {
 
 	    let isArr1Depleted = index1 >= arr1.length;
 	    let isArr2Depleted = index2 >= arr2.length;
+	    console.log(index1,arr1.length,isArr1Depleted);
 
 	    if (!isArr1Depleted && (isArr2Depleted || (arr1[index1] < arr2[index2]))) {
 	      merged[current] = arr1[index1];

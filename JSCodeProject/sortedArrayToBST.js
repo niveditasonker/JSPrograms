@@ -8,13 +8,17 @@ function TNode(val){
 	this.left=this.right=null;
 }
 
+var sortedArrayToBST = function(nums) {
+    return arrToBST(nums, 0, nums.length-1);
+};
+
 var arrToBST = function(a, start, end){
 	
 	if(start > end){
 		return null;
 	}
 	
-	var mid = Math.floor((end + start)/2);
+	var mid = start + parseInt((end - start)/2);
 //	console.log(a, start, end,mid);
 	
 	var tnode = new TNode(a[mid]);
@@ -35,8 +39,8 @@ var preorder = function(node){
 	
 }
 
-var tree = arrToBST(arr,0,len-1);
-//console.log(tree);
-preorder(tree);
-console.log(str);
+var tree = sortedArrayToBST(arr);
+console.log(tree);
+//preorder(tree);
+//console.log(str);
 

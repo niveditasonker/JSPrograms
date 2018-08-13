@@ -1,3 +1,7 @@
+var Inorderstr = "";
+var preorderstr = "";
+var postorderstr = "";
+
 function Node(value){
 	this.value = value;
 	this.right = null;
@@ -41,7 +45,7 @@ BinarySearch.prototype.push  = function(elem){
 
 BinarySearch.prototype.printTree = function(){
 	var curr = this.root;
-	var str = "";
+	
 	while(curr){
 		str += curr.value + " ";
 	}
@@ -52,14 +56,15 @@ BinarySearch.prototype.inorder = function(node){
 	var str = "";
 	if(node!=null){
 		this.inorder(node.left);
-		console.log(node.value);
+		Inorderstr += node.value + " ";
+//		console.log(node.value);
 		this.inorder(node.right);
 	}
 }
 
 BinarySearch.prototype.preorder = function(node){
 	if(node!=null){
-		console.log(node.value);
+		preorderstr += node.value + " ";
 		this.preorder(node.left);
 		this.preorder(node.right);
 	}
@@ -71,7 +76,7 @@ BinarySearch.prototype.postorder = function(node){
 		
 		this.postorder(node.left);
 		this.postorder(node.right);
-		console.log(node.value);
+		postorderstr += node.value + " ";
 	}
 	
 }
@@ -98,7 +103,7 @@ BinarySearch.prototype.maxNode = function(node){
 
 BinarySearch.prototype.remove = function(node){
 	this.root = this.removeNode(this.root, node);
-	console.log(this.root);
+//	console.log(this.root);
 }
 
 BinarySearch.prototype.removeNode = function(node, key){
@@ -139,8 +144,14 @@ bst.push(6)
 bst.push(5);;
 //console.log(global.value);
 bst.inorder(bst.root);
+console.log(Inorderstr);
 bst.preorder(bst.root);
+console.log(preorderstr);
 bst.postorder(bst.root);
+console.log(postorderstr);
 bst.maxNode(bst.root);
 bst.remove(4);
+console.log(Inorderstr);
 //bst.printTree();
+
+//http://blog.benoitvallon.com/data-structures-in-javascript/the-binary-search-tree-data-structure/
