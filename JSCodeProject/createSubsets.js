@@ -5,7 +5,9 @@ var subsets = function(nums){
     
     function generate(nums,i,curr,res){
     	for(var i;i<nums.length;i++){
+    		
         	curr.push(nums[i]);
+        	console.log(i,nums[i],curr,curr.slice());
             res.push(curr.slice());
             generate(nums,i+1,curr,res);
             curr.pop();
@@ -36,5 +38,5 @@ var generate2 = function(nums,i,curr,result){
     curr.pop();
 }
 
-console.log(subsets2(nums));
+//console.log(subsets2(nums));
 console.log(subsets(nums));

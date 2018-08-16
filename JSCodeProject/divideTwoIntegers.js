@@ -1,8 +1,8 @@
-//var dividend = 10;
-//var divisor = 3;
+var dividend = 10;
+var divisor = 3;
 
-var dividend = 7;
-var divisor = -3;
+//var dividend = 7;
+//var divisor = -3;
 
 var divide = function(dividend, divisor) {
     var isDiff = false;
@@ -21,10 +21,12 @@ var divide = function(dividend, divisor) {
     	d1 -= d2;
     	res += incr;
     	
+    	console.log(d2, d2<<=1,incr <<= 1);
     	d2 <<= 1;
     	incr <<= 1;
     	
     	while(d1 < d2 && d2 > absDivisor){
+    		console.log("in while: ",d2, d2>>=1, incr >>=1);
     		d2 >>= 1;
     		incr >>= 1;
     	}

@@ -1,4 +1,4 @@
-var arr = [1,1,2];
+var arr = [1,1,2,3];
 
 var permuteUnique = function(nums) {
     var res = [];

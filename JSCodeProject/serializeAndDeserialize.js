@@ -11,6 +11,7 @@ var serialize = function(root) {
     }
     
 	serializeTree(root, result);
+	console.log(result.join(','));
     return result.join(',');    
 };
 

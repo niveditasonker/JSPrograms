@@ -1,3 +1,4 @@
+//complexity (o(mn)), space(O(mn))
 var str = "xaylmz";
 var pattern = "x?y*z";
 
@@ -46,6 +47,7 @@ function isMatch(s,p){
 		for(var j=0;j<=pLen;j++){
 			temp.push(false);
 		}
+//		temp = new Array(pLen).fill(false);
 		dp.push(temp);
 	}
 	

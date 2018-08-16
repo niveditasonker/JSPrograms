@@ -1,4 +1,4 @@
-var number = 1298754687;
+var number = 129878;
 var map = {};
 map[0] = "Zero";
 map[1] = "One";
@@ -101,3 +101,45 @@ function convert(num){
     }
     return newStr;
 }
+
+var belowTen = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+var belowTwenty = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+var belowHundred = ["", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+
+
+var helper = function(n){
+	var result = "";
+	if(n < 10){
+		result = belowTen[n];
+	}else if(n < 20){
+		result =  belowTwenty[n-10];
+	}else if(n < 100){
+		result = belowHundred[parseInt(n/10)] + " " + helper(n%10);
+	}else if(n < 1000){
+		result = helper(parseInt(n/100)) + " Hundred " + helper(n%100);
+	}else if(n < 1000000){
+		result = helper(parseInt(n/1000)) + " Thousand " + helper(n%1000);
+	}else if(n < 1000000000){
+		result = helper(parseInt(n/1000000)) + " Million " + helper(n%1000000);
+	}else{
+		result = helper(parseInt(n/1000000000)) + " Billion " + helper(n%1000000000);
+	}
+	return result.trim();
+	
+
+}
+
+
+var numberToWords = function(num) {
+    
+    
+    if(num == 0){
+    	return "Zero";
+    }
+
+    return helper(num);
+    	
+};
+
+
+console.log(numberToWords(number));

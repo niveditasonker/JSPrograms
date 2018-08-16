@@ -111,4 +111,4 @@ console.log(q1);
 
 q1.remove(100);
 console.log("===========");
-console.log(q1);
+console.log(q1 );
