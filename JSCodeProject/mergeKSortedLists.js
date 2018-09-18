@@ -61,4 +61,4 @@ var mergeKLists = function(lists) {
 	return merge(0,lists.length-1,lists);
 }
 
-mergeKLists(inp);
+mergeKLists(inp); //n*log(k); If n is num of nodes/list, then n*k*log(k);

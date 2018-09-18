@@ -1,0 +1,25 @@
+var MedianFinder = function() {
+  this.nums = [];  
+};
+
+/** 
+ * @param {number} num
+ * @return {void}
+ */
+MedianFinder.prototype.addNum = function(num) {
+    
+};
+
+/**
+ * @return {number}
+ */
+MedianFinder.prototype.findMedian = function() {
+    
+};
+
+/** 
+ * Your MedianFinder object will be instantiated and called as such:
+ * var obj = Object.create(MedianFinder).createNew()
+ * obj.addNum(num)
+ * var param_2 = obj.findMedian()
+ */

@@ -13,10 +13,11 @@ var zigzagLevelOrder = function(root) {
 	
     var fromLeft = true;
     var result = [];
-    var tmpResult = [];
-    var nextLevel = [];
+
     
     while(curLevel.length > 0){
+        var tmpResult = [];
+        var nextLevel = [];
     	var len = curLevel.length;
     	
         for(var i = 0; i < len; i++) {
@@ -41,9 +42,9 @@ var zigzagLevelOrder = function(root) {
         }
         fromLeft = !fromLeft;
         curLevel = nextLevel;
-        nextLevel = [];
+//        nextLevel = [];
         result.push(tmpResult);
-        tmpResult = [];
+//        tmpResult = [];
     }
     
     return result;

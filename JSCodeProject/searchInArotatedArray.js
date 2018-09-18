@@ -26,4 +26,36 @@ var bool = function(arr,val){
 	
 }
 
+var searchInRotatedArrayII = function(num, tgt){
+	var start = 0;
+	var end = num.length;
+	var mid;
+	
+	while(start <= end){
+		mid = parseInt(start+end)/2;
+		
+		if(num[mid] == tgt) return true;
+		
+		if(num[mid] < num[end]){
+			if(num[mid] < tgt && num[end] >= tgt){
+				start = mid+1;
+			}else{
+				end = mid-1;
+			}
+		}else if(num[mid] > num[end]){
+			if(num[mid] > tgt && num[start] <= tgt){
+				end = mid -1;
+			}else{
+				start = mid + 1;
+			}
+		}else{
+			end--;
+		}
+	}
+	
+	return false;
+}
+
 console.log(bool(nums, fetch));
+
+console.log(searchInRotatedArrayII(num,target));

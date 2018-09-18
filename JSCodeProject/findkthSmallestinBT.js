@@ -22,6 +22,31 @@ function recurFind(root){
 	return result;
 }
 
+var kthSmallest = function(root, k) {
+    var count = 0;
+    var isFound = false;
+    var result = null;
+    
+    
+    function findK(root){
+        if(root != null && !isFound){
+            findK(root.left);
+            count++;
+            if(count == k){
+                result = root.val;
+                isFound = true;
+                return;
+            }
+            findK(root.right);
+        }
+
+    }
+    findK(root);
+    return result;
+    
+};
+
+
 var n1 = new TreeLinkNode(6);
 var n2 = new TreeLinkNode(4);
 var n3 = new TreeLinkNode(8);
@@ -38,3 +63,4 @@ n3.left = n6;
 n3.right = n7;
 
 console.log(recurFind(n1));
+console.log(kthSmallest(n1,k));

@@ -48,3 +48,5 @@ function findTriplets(n){
 function sortNumber(a,b) {
     return a - b;
 }
+
+//complexity: O(nlogn);

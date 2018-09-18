@@ -52,7 +52,7 @@ LinkedList.prototype.megeTwoLL = function(first,sec){
 		temp.next=sec;
 	}
 	
-//	console.log(data.next);
+	console.log(data.next);
 	return data.next;
 
 
@@ -89,3 +89,49 @@ var rll = new LinkedList();
 var mergedll = rll.megeTwoLL(fll.head, sll.head);
 //rll.printList(mergedll);
 console.log(mergedll);
+
+
+
+LinkedList.prototype.mergeTwoLL2 = function(l1,l2){
+	var temp;
+	var curr;
+	
+	if(!l1) return l2;
+	
+	if(! l2){
+		return l1;
+	}
+	
+	if(l1.val < l2.val){
+		temp = l1;
+		curr = temp;
+		l1= l1.next;
+	}else{
+		temp = l2;
+		curr = temp;
+		l2 = l2.next;
+		
+	}
+	
+	while(l1 && l2){
+		if(l1.val < l2.val){
+			curr.next = l1;
+			curr = l1;
+			l1 = l1.next;
+		}else{
+			curr.next = l2;
+			curr = l2;
+			l2 = l2.next;
+		}
+	}
+	
+    if (l1) {
+        curr.next = l1;
+    } else if (l2) {
+        curr.next = l2;
+    }
+    
+    return temp;
+}
+
+//console.log(mergeTwoLL2(fll,sll));

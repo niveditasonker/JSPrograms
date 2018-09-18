@@ -32,7 +32,7 @@ Graph.prototype.removeEdge = function(edge){
 	else delete this.nodes[node][edge];
 }
 
-Graph.prototype.removeEdge = function(node){
+Graph.prototype.removeNode = function(node){
 	if(this.nodes[node] == undefined) return "Node dosn't exists";
 	else delete this.nodes[node];
 	

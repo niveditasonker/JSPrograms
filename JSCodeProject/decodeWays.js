@@ -45,5 +45,47 @@ var numDecodings2 = function(s) {
 	}
 	return dp[0];
 }
+
+
+var decodeWays3 = function(s) {
+    var n = s.length;
+     var dp = new Array(n+1);
+      dp[0] = 1;
+      if (s[0] == '0')
+          dp[1] = 0;
+      else
+          dp[1] = 1;
+      for (var i = 2; i < s.length + 1; i++){
+          if (s[i - 1] > '0')
+              dp[i] = dp[i - 1];
+          if (s[i - 2] == '1' || s[i - 2] == '2' && s[i - 1] < '7')
+             dp[i] += dp[i - 2]; 
+      }
+      return dp[s.length];
+};
+
+
+
+
+
+var decodeWays2 = function(s){
+var n = s.length;
+if(n==0) return 0;
+var memo = new Array(n+1);
+
+memo[n] = 1;
+memo[n-1] = s.charAt(n-1) != '0' ? 1:0;
+
+for(var i=n-2; i>= 0; i--){
+  if(s.charAt(i)=='0') continue;
+  else{
+    memo[i] = s.charAt(i,i+1) <= 26 ? memo[i+1] + memo[i+2] : memo[i+1];
+  }
+}
+return memo[0];
+
+}
 console.log(numDecodings(input));
 console.log(numDecodings2(input));
+console.log(decodeWays2(input));
+console.log(decodeWays3(input));

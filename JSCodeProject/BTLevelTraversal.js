@@ -35,6 +35,36 @@ var connect = function(root){
 	}
 }
 
+var BTLevelOrder = function(root){
+	var result = [];
+	var queue = [];
+	
+	if(root == null) return queue;
+	
+	queue.push(root);
+	
+	while(queue.length){
+		console.log("length 1.........",queue.length);
+		var curr  = [];
+		var pData = [];
+		
+		for(var i in queue){
+			console.log(".......",i, queue[i]);
+			queue[i].left ? curr.push(queue[i].left) : null;
+			queue[i].right ? curr.push(queue[i].right) : null;
+			pData.push(queue[i].val);
+		}
+//		console.log(pData);
+		result.unshift(pData);
+//		console.log(curr);
+		console.log("length.........",queue.length);
+		queue = curr;
+	}
+	result.reverse();
+	return result;
+}
+
+
 var n1 = new TreeLinkNode(3);
 var n2 = new TreeLinkNode(9);
 var n3 = new TreeLinkNode(20);
@@ -50,4 +80,5 @@ n2.right = n5;
 n3.left = n6;
 n3.right = n7;
 
-connect(n1);
+//connect(n1);
+console.log(BTLevelOrder(n1));
