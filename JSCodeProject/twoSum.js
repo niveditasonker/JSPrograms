@@ -10,7 +10,7 @@ var twoSum = function(nums, target) {
         var diff = target - nums[i];
 
         if(diff in data){
-            return([i, data[diff]]);
+            return([data[diff],i]);
         }else{
         	data[n] = i;
         }

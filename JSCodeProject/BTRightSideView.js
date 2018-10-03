@@ -28,7 +28,7 @@ var righSideView = function(root){
 				queue.push(node.left);
 			}
 			
-			if(node.rigth){
+			if(node.right){
 				queue.push(node.right);
 			}
 			

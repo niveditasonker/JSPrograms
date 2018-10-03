@@ -19,11 +19,12 @@ var copyRandomList = function(head) {
     	
     	newNode.next = copyList(node.next);
     	newNode.random = copyList(node.random);
-    	console.log("random...");
-    	console.log(newNode.random);
+//    	console.log("random...");
+//    	console.log(newNode.random);
     	return newNode;
     }
     
+    console.log(newHead.next);
     return newHead.next;
 };
 

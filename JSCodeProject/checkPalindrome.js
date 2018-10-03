@@ -77,4 +77,25 @@ var isNumber = function(s) {
     return /^\d+\.\d+$/.test(s);
 };
 
+
+var isPalindromeNum = function(x) {
+    if (x < 0) return false;
+
+    var reverse = 0,
+        r,
+        q = x;
+
+    do {
+        r = q % 10;
+        q = Math.trunc(q / 10);
+        
+        reverse += r;
+        if (q > 0) { reverse *= 10; }
+    } while (q > 0);
+    
+    return (x - reverse) === 0 ? true : false;
+};
+
+console.log(isPalindromeNum(-121));
+
 //console.log(isNumber(0));

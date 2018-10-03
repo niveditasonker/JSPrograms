@@ -16,6 +16,7 @@ function isPalindrome(str){
 }
 
 var palindromePairs = function(words) {
+	console.log("words: "+words);
 	var map = {};
 	var res = new Set();
 	var s1;

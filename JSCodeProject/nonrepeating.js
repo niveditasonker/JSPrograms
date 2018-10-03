@@ -37,3 +37,26 @@ function getIndex(){
 }
 
 
+//var firstUniqChar = function(s) {
+//    var repeatCount = new Array(256);
+//    
+//    for(var i=0;i<s.length;i++){
+//    	var c= s.charAt(i);
+////    	console.log(c,s.charCodeAt(i),'A'.charCodeAt(0));
+//    	repeatCount[s.charCodeAt(i)-'A'.charCodeAt(0)]++;
+//    }
+//    
+//    console.log(repeatCount);
+//    
+//    for(var i=0;i<s.length;i++){
+//    	var c = s.charAt(i);
+//        if (repeatCount[s.charCodeAt(i)-'A'.charCodeAt(0)] == 1) {
+//            return i;
+//        }
+//    }
+//    
+//    return -1;
+//};
+//
+//console.log(firstUniqChar(s));
+

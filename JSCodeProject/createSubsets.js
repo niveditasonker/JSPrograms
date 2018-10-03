@@ -4,7 +4,7 @@ var subsets = function(nums){
 	var res = [[]];
     
     function generate(nums,i,curr,res){
-    	for(var i;i<nums.length;i++){
+    	for(i;i<nums.length;i++){
     		
         	curr.push(nums[i]);
         	console.log(i,nums[i],curr,curr.slice());
