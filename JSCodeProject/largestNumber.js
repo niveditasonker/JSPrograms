@@ -4,7 +4,7 @@ var largestNumber2 = function(nums) {
         result = '',
         startWithZero = true;
     nums.sort(function(a, b){
-    	console.log(a + '' + b, b + '' + a);
+    	console.log(a,b, a + '' + b, b + '' + a);
         var x = a + '' + b,
             y = b + '' + a;
         console.log(parseInt(y) - parseInt(x));

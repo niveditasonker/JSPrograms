@@ -98,4 +98,5 @@ var isPalindromeNum = function(x) {
 
 console.log(isPalindromeNum(-121));
 
+
 //console.log(isNumber(0));

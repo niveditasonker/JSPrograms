@@ -8,7 +8,7 @@ var twoSum = function(nums, target) {
     for(var i=0;i<nums.length;i++){
         var n = nums[i];
         var diff = target - nums[i];
-
+//        console.log(nums[i],diff, data,i);
         if(diff in data){
             return([data[diff],i]);
         }else{

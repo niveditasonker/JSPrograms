@@ -228,34 +228,34 @@ if(!this.root) {
 };
 BinarySearchTree.prototype.remove = function(data) {
 var that = this;
-var removeNode = function(node, data) {
-  if(!node) {
-    return null;
-  }
-  if(data === node.data) {
-    if(!node.left && !node.right) {
-      return null;
-    }
-    if(!node.left) {
-      return node.right;
-    }
-    if(!node.right) {
-      return node.left;
-    }
-    // 2 children
-    var temp = that.getMin(node.right);
-    node.data = temp;
-    node.right = removeNode(node.right, temp);
-    return node;
-  } else if(data < node.data) {
-    node.left = removeNode(node.left, data);
-    return node;
-  } else {
-    node.right = removeNode(node.right, data);
-    return node;
-  }
-};
-this.root = removeNode(this.root, data);
+	var removeNode = function(node, data) {
+	  if(!node) {
+	    return null;
+	  }
+	  if(data === node.data) {
+	    if(!node.left && !node.right) {
+	      return null;
+	    }
+	    if(!node.left) {
+	      return node.right;
+	    }
+	    if(!node.right) {
+	      return node.left;
+	    }
+	    // 2 children
+	    var temp = that.getMin(node.right);
+	    node.data = temp;
+	    node.right = removeNode(node.right, temp);
+	    return node;
+	  } else if(data < node.data) {
+	    node.left = removeNode(node.left, data);
+	    return node;
+	  } else {
+	    node.right = removeNode(node.right, data);
+	    return node;
+	  }
+	};
+	this.root = removeNode(this.root, data);
 };
 BinarySearchTree.prototype.contains = function(data) {
 var current = this.root;

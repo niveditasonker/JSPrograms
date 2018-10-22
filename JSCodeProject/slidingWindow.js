@@ -25,5 +25,36 @@ var slidingWindow = function(arr,k){
 
 }
 
+var maxSlidingWindow = function(nums, k) {
+    var result = [],
+        queue = [],
+        len = nums.length,
+        i;
+    
+    if (k > len || k === 0) {
+        return result;
+    }
+    
+    for (i = 0; i < len; i++) {
+    	console.log(i,queue.length,nums[queue[queue.length - 1]],nums[i]);
+        while (queue.length > 0 && nums[queue[queue.length - 1]] < nums[i]) {
+            queue.pop();
+        }
+        
+        if (queue[0] < i - k + 1) {
+            queue.shift();
+        }
+        console.log("Queue1: ",queue);
+        queue.push(i);
+        console.log("Queue2: ",queue);
+        
+        if (i >= k - 1) {
+            result.push(nums[queue[0]]);
+        }
+    }
+    
+    return result;
+};
 var rArr = slidingWindow(nums,k);
 console.log(rArr);
+console.log(maxSlidingWindow(nums,k));

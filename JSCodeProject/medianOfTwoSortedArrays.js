@@ -13,7 +13,7 @@ function findMedianSortedArrays(nums1, nums2){
 	var hi = N2*2;
 	
 	while(lo<=hi){
-		var mid2 = (lo + hi)/2;
+		var mid2 = parseInt((lo + hi)/2);
 		var mid1 = N1+N2 - mid2;
 		
 		var L1 = (mid1 == 0) ? Number.MIN_SAFE_INTEGER : nums1[(mid1-1)/2];

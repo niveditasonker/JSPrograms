@@ -134,4 +134,4 @@ LinkedList.prototype.mergeTwoLL2 = function(l1,l2){
     return temp;
 }
 
-//console.log(mergeTwoLL2(fll,sll));
+//console.log(mergeTwoLL2(fll.head,sll.head));

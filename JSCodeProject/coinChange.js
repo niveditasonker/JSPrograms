@@ -34,7 +34,7 @@ function rec_coins_dynamic(target,coins,res){
 	}else{
 		for (var i=0;i<coins.length;i++){
 			if(coins[i] <= target){
-				var num_coin = 1+rec_coins(target-coins[i], coins);
+				var num_coin = 1+rec_coins_dynamic(target-coins[i], coins,res);
 				if(num_coin < min_coins){
 					min_coins = num_coin;
 					res[target] = min_coins;

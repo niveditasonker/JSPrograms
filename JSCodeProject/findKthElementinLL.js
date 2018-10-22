@@ -16,7 +16,7 @@ ll.head.next.next.next = new Node(4);
 ll.head.next.next.next.next = new Node(5);
 ll.head.next.next.next.next.next = new Node(6);
 
-LinkedList.prototype.findElement = function(root, n){
+LinkedList.prototype.findElementFromLast = function(root, n){
 	var temp = root;
 	var len = 0;
 	
@@ -30,12 +30,35 @@ LinkedList.prototype.findElement = function(root, n){
 	}
 	temp = root;
 	
-	for(var i=1;i<len-n+1;i++){
-//	for(var i=0;i<len-n;i++){
+//	for(var i=1;i<len-n+1;i++){
+	for(var i=0;i<len-n;i++){
 		temp = temp.next;
 	}
 	
 	console.log(temp.data);
 }
 
-ll.findElement(ll.head,4);
+LinkedList.prototype.findElementFromStart = function(root, n){
+	var temp = root;
+	var len = 0;
+	
+	while( temp != null){
+		temp = temp.next;
+		len++;
+	}
+	
+	if(len < n){
+		return;
+	}
+	temp = root;
+	
+//	for(var i=1;i<len-n+1;i++){
+	for(var i=0;i<n;i++){
+		temp = temp.next;
+	}
+	
+	console.log(temp.data);
+}
+
+ll.findElementFromLast(ll.head,4);
+ll.findElementFromStart(ll.head,4);

@@ -5,8 +5,8 @@ var titleToNumber = function(s) {
     
 //    console.log('A'.charCodeAt());
     for(var i=0;i<s.length;i++){
-//    	sum = (sum * 26) + (s.charCodeAt(i)-('A'.charCodeAt(0)-1));
-    	sum = (sum * 26) + (s.charCodeAt(i)-64);
+    	sum = (sum * 26) + (s.charCodeAt(i)-('A'.charCodeAt(0)-1));
+//    	sum = (sum * 26) + (s.charCodeAt(i)-64);
     }
     return sum;
 };
