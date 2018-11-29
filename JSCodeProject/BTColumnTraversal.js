@@ -24,9 +24,11 @@ var verticalOrder = function(root) {
 		console.log(len);
 		for(var i=0;i<len;i++){
 			var pair = queue.shift();
+//			console.log("Pair: ", pair);
 			var node = pair[0];
 			var order = pair[1];
-			console.log(node,pair);
+			console.log("....",pair[0]);
+			console.log("=======",pair[1]);
 			
 			hash[order] = hash[order] || [];
 			hash[order].push(node.val);
@@ -41,6 +43,8 @@ var verticalOrder = function(root) {
 			if(node.right){
 				queue.push([node.right, order+1]);
 			}
+			
+			console.log("Q: ", queue);
 		}
 	}
 	

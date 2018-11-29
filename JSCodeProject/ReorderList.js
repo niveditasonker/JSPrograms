@@ -28,10 +28,14 @@ var reorderList = function(head) {
     	preMid.next = curr;
     	
 //    	console.log(preMid.next);
+//    	console.log("..........",preCurr);
     }
+//    console.log(preMid);
     
     p1=head;
     p2=preMid.next;
+//  console.log(p1);
+//  console.log(p2.next);
     
     while(p1!=preMid){
     	preMid.next=p2.next;
@@ -39,7 +43,11 @@ var reorderList = function(head) {
         p1.next=p2;
         p1=p2.next;
         p2=preMid.next;
+        console.log("..........",p1);
     }
+    
+    console.log("===========");
+    console.log(p1);
 };
 
 var ll = new LinkedList();;

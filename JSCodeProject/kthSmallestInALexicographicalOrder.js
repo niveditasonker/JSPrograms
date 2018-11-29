@@ -18,9 +18,11 @@ var findKthNumber = function(n,k) {
 var calSteps = function( n, n1,n2) {
     var steps = 0;
     while (n1 <= n) {
+    	console.log("...",n1,n2);
         steps += Math.min(n + 1, n2) - n1;
         n1 *= 10;
         n2 *= 10;
+        console.log(n1,n2);
     }
     return steps;
 }

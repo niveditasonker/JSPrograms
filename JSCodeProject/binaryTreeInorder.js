@@ -84,17 +84,20 @@ BinarySearch.prototype.postorder = function(t1){
 		curr = stack[stack.length-1];
 		console.log("Curr:============ ",curr);
 		if(prev == null || prev.left == curr || prev.right == curr){ //traverse down the tree
+			console.log("1..........",curr.value, prev);
 			if(curr.left != null){
 				stack.push(curr.left);
 			}else if(curr.right != null){
 				stack.push(curr.right);
 			}
 		}else if(curr.left == prev){ //traverse up the tree from left
+			console.log("2..........",curr.value);
 			if(curr.right != null){
 				stack.push(curr.right);
 			}
 		}else{
 			// curr==prev
+			console.log("3..........",curr.value);
 			result.push(curr.value);
 			stack.pop();
 		}
@@ -108,7 +111,7 @@ var tree = new BinarySearch();
 
 tree.root1 = new Node(1);
 tree.root1.left = new Node(2);
-tree.root1.right = new Node(1);
+tree.root1.right = new Node(5);
 tree.root1.right.left = new Node(3);
 tree.root1.right.right = new Node(4);
 

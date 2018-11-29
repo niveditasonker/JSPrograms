@@ -1,4 +1,6 @@
-var input = "()())()";
+//var input = "()())()";
+var input = "(a))";
+//var input = "))a((";
 
 var removeInvalidParentheses = function(s) {
     var queue = [];
@@ -11,7 +13,7 @@ var removeInvalidParentheses = function(s) {
     
     while(queue.length>0){
     	s = queue.shift();
-    	console.log(s);
+    	console.log("s:", s);
     	if(isValid(s)){
     		console.log("valid: "+s);
     		res.push(s);
@@ -26,12 +28,14 @@ var removeInvalidParentheses = function(s) {
     	
     	for(var i=0;i<s.length;i++){
     		if(s[i]!='('&& s[i] != ')'){
+    			console.log("i: ",i, s[i]);
+    		
     			continue;
     		}
     		
     		
     		var newS = s.substring(0,i)+s.substring(i+1);
-    		console.log("Substr: ",s.substring(0,i), "2...",s.substring(i+1), "newS: "+newS);
+    		console.log(i, "Substr: ",s.substring(0,i), "2...",s.substring(i+1), "newS: "+newS);
 //    		console.log("newS: "+i, s[i],newS);
 //    		console.log(visited[newS]);
     		if(!visited[newS]){

@@ -61,4 +61,4 @@ n3.right = n6;
 
 console.log(pruneTree(n1));
 console.log("===============");
-console.log(pruneTree(n1));
+console.log(pruneTree2(n1));

@@ -14,6 +14,26 @@ var tree = {
   }
 };
 
+function findKthLargest(root,k,c){
+	var res = null;
+	var c = 0;
+	
+	function findK(node){
+		if(!node) return null;
+		if (node.right !== null) findK(node.right);
+		c++;
+		if(c == k){
+			res = node.val;
+			return;
+		}
+		
+		
+		if (node.left  !== null) findK(node.left,  k, c);  
+	}
+	findK(root);
+	return res;
+}
+
 function inorderReverse(node, cb) {
   if (node.right !== null) inorderReverse(node.right, cb);
   cb(node);
@@ -26,4 +46,6 @@ var count = 1;
 inorderReverse(tree, function(node) {
   if (count++ === k) console.log(node.val);
 });
+
+console.log(findKthLargest(tree,k,1));
 

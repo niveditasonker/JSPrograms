@@ -2,7 +2,7 @@ var n = 10;
 
 var countPrimes = function(n){
 	if(n==1) return 0;
-	
+	var arr = [];
 	var result = 0;
 	var prime = true;
 	
@@ -17,9 +17,12 @@ var countPrimes = function(n){
 			}
 		}
 		
-		if(prime) result++;
+		if(prime) {
+			result++;
+			arr.push(i);
+		}
 	}
-	
+	console.log(arr);
 	return result;
 }
 

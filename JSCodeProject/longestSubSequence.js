@@ -11,19 +11,21 @@ function findSubseq(arr){
 			data[arr[i]] = 1;
 		}
 	}
-
+	console.log(data);
 	for(var i=0; i<arr.length;++i){
 //		if(data[arr[i]-1] != undefined){
-//		console.log(!([arr[i]-1] in data));
+//		console.log(!([arr[i]-1] in data), arr[i]);
 		if(!([arr[i]-1] in data)){
 			var j = arr[i];
 			while(j in data){
+//				console.log("in data...",j);
 				j++;
 			}
-			
+//			console.log(ans,j,arr[i]);
 			if(ans<j-arr[i]){
 				ans = j-arr[i];
 			}
+			console.log(ans);
 		}
 	}
 	

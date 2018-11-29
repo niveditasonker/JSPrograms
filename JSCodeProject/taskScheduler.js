@@ -69,5 +69,32 @@ function leastInterval2(tasks, n) {
 	  console.log(tasks.length, (arr[25] - 1) * (n + 1) + 25 - i);
 	  return Math.max(tasks.length, (arr[25] - 1) * (n + 1) + 25 - i);
 	}
-console.log(leastInterval(arr,n));
+
+
+
+function leastInterval3(tasks,n){
+	var counter = new Array(26);
+    var max = 0;
+    var maxCount = 0;
+    for(var task of tasks) {
+        counter[task.charCodeAt(0) - 'A'.charCodeAt(0)]++;
+        if(max == counter[task.charCodeAt(0) - 'A'.charCodeAt(0)]) {
+            maxCount++;
+        }
+        else if(max < counter[task.charCodeAt(0) - 'A'.charCodeAt(0)]) {
+            max = counter[task.charCodeAt(0) - 'A'.charCodeAt(0)];
+            maxCount = 1;
+        }
+    }
+    
+    var partCount = max - 1;
+    var partLength = n - (maxCount - 1);
+    var emptySlots = partCount * partLength;
+    var availableTasks = tasks.length - max * maxCount;
+    var idles = Math.max(0, emptySlots - availableTasks);
+    
+    return tasks.length + idles;
+}
+//console.log(leastInterval(arr,n));
 console.log(leastInterval2(arr,n));
+//console.log(leastInterval3(arr,n));

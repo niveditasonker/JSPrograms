@@ -1,6 +1,7 @@
-var spiralOrder = function(matrix) {
+var antiSpiralOrder = function(matrix) {
     if (matrix.length === 0) return [];
     var result = [];
+    var anti = [];
 
     var left = 0;
     var top = 0;
@@ -27,7 +28,10 @@ var spiralOrder = function(matrix) {
         for (j=left; j<=right; j++) result.push(matrix[top][j]);
     }
 
-    return result;
+    for(var k =result.length-1;k>=0;k--){
+    	anti.push(result[k]);
+    }
+    return anti;
 
 };
 
@@ -37,4 +41,4 @@ var mat = [  [1,2, 3,4],
         [13,14,15,16]
 ];
 
-console.log(spiralOrder(mat));
+console.log(antiSpiralOrder(mat));

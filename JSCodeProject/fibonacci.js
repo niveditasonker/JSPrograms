@@ -61,5 +61,5 @@ function Factorial(n){
 console.log(fibo(n));
 console.log(Fibonnaci(n));
 console.log(FibonnaciIterative(n));
-console.log(fiboDP(n));
-console.log(Factorial(n));
+//console.log(fiboDP(n));
+//console.log(Factorial(n));

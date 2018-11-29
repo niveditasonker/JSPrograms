@@ -1,4 +1,5 @@
-var romanNum = "IV";
+//var romanNum = "IV";
+var romanNum = "XL";
 
 function convertRomanToNum(num){
 	var map = {
@@ -116,6 +117,6 @@ function getInt(c){
 	}
 }
 
-console.log(romanToInteger(num1));
-console.log(convertRomanToNum(romanNum));
-console.log(RomToInt(romanNum));
+console.log("romanToInteger",romanToInteger(num1));
+console.log("convertRomanToNum",convertRomanToNum(romanNum));
+console.log("RomToInt",RomToInt(romanNum));

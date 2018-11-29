@@ -12,7 +12,7 @@ var merge = function(intervals) {
      if(intervals.length) {
          res.push(intervals[0]);
      }
-     
+//     console.log(res);
      for(var i = 1; i < intervals.length; i++) {
          var interval = intervals[i];
          var last = res.pop();
@@ -24,6 +24,7 @@ var merge = function(intervals) {
              last.end = Math.max(last.end, interval.end);
              res.push(last);
          }
+//         console.log(res);
      }
      
      return res;
@@ -59,4 +60,4 @@ var merge = function(intervals) {
 // var inp = [[1,3],[2,6],[8,10],[15,18]];
  
  console.log(merge(data));
- console.log(merge2(data));
+// console.log(merge2(data));

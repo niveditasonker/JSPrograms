@@ -32,17 +32,19 @@ var searchInRotatedArrayII = function(num, tgt){
 	var mid;
 	
 	while(start <= end){
-		mid = parseInt(start+end)/2;
+		mid = parseInt((start+end)/2);
 		
 		if(num[mid] == tgt) return true;
-		
+		console.log("end",end, num[mid], mid, num[end], num.length);
 		if(num[mid] < num[end]){
+			console.log("1....");
 			if(num[mid] < tgt && num[end] >= tgt){
 				start = mid+1;
 			}else{
 				end = mid-1;
 			}
 		}else if(num[mid] > num[end]){
+			console.log("2....");
 			if(num[mid] > tgt && num[start] <= tgt){
 				end = mid -1;
 			}else{

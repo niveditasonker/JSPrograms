@@ -49,18 +49,19 @@ var BTLevelOrder = function(root){
 		var pData = [];
 		
 		for(var i in queue){
-			console.log(".......",i, queue[i]);
+//			console.log(".......",i, queue[i]);
 			queue[i].left ? curr.push(queue[i].left) : null;
 			queue[i].right ? curr.push(queue[i].right) : null;
 			pData.push(queue[i].val);
 		}
-//		console.log(pData);
-		result.unshift(pData);
+		console.log(pData);
+//		result.unshift(pData);
+		result.push(pData);
 //		console.log(curr);
-		console.log("length.........",queue.length);
+//		console.log("length.........",queue.length);
 		queue = curr;
 	}
-	result.reverse();
+//	result.reverse();
 	return result;
 }
 

@@ -66,8 +66,10 @@ function findIsl(grid){
     for(var i=0; i<m; i++){
         for(var j=0; j<n; j++){
             if(grid[i][j]=='1'){
+            	console.log(i,j);
                 count++;
                 merge1(grid, i, j);
+                console.log(grid);
             }
         }
     }
@@ -76,6 +78,7 @@ function findIsl(grid){
 }
 
 function  merge1(grid, i, j){
+		console.log("i,j: ",i,j);
 	   var m=grid.length;
 	   var n=grid[0].length;
 	 

@@ -50,6 +50,7 @@ var canConstruct2 = function(ransomNote, magazine) {
 	
 	rArr.forEach(function(item,index){
 		magazine = magazine.replace(item,'');
+		console.log("....",magazine);
 	});
 	
 	if(old.length == magazine.length+rArr.length) return true;
@@ -63,7 +64,7 @@ console.log(canConstruct("aa","aba"));
 console.log(canConstruct("aabbc","baac"));
 
 console.log("=============");
-console.log(canConstruct2("a","b"));
-console.log(canConstruct2("aa","ab"));
+//console.log(canConstruct2("a","b"));
+//console.log(canConstruct2("aa","ab"));
 console.log(canConstruct2("aa","aba"));
-console.log(canConstruct2("aabbc","baac"));
+//console.log(canConstruct2("aabbc","baac"));

@@ -8,7 +8,7 @@ var countSmaller = function(nums) {
 	for(let i=nums.length-1;i>=0;i--){
 		left = 0;
 		right = tmp.length;
-		
+		console.log(left, right);
 		while(left<right){
 			mid = parseInt((left+right)/2);
 			
@@ -20,7 +20,9 @@ var countSmaller = function(nums) {
 		}
 		
 		res[i] = right;
+		console.log(tmp);
 		tmp.splice(right,0,nums[i]);
+		console.log(".....",tmp);
 	}
 	
 	return res;

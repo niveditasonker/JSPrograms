@@ -19,8 +19,9 @@ function addBinary(n1,n2){
 		carry += m+n;
 		console.log(carry);
 		result = carry%2 +result;
+		console.log("Res",carry%2, result);
 		carry = carry/2 | 0;
-		console.log(carry, result);
+		console.log(carry%2,carry, result);
 		i--;
 		j--;
 	}

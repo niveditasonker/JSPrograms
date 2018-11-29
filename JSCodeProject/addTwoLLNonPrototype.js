@@ -90,13 +90,13 @@ var addTwoNumbers = function(l1, l2) {
 var fll = new LinkedList();
 var sll = new LinkedList();
 
-fll.head = new ListNode(3);
+fll.head = new ListNode(2);
 fll.head.next = new ListNode(4);
-fll.head.next.next = new ListNode(7);
+fll.head.next.next = new ListNode(3);
 //
-sll.head = new ListNode(8);
-sll.head.next = new ListNode(5);
-sll.head.next.next = new ListNode(1);
+sll.head = new ListNode(5);
+sll.head.next = new ListNode(6);
+sll.head.next.next = new ListNode(4);
 
 
 console.log(addTwoNumbers(fll.head,sll.head));

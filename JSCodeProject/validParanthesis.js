@@ -7,6 +7,7 @@ function isValid(s) {
     map['('] = ')';
     map['['] = ']';
     map['{'] = '}';
+    map['<'] = '>';
  
     var stack = [];
  
@@ -40,3 +41,4 @@ function checkValue(map, val) {
 console.log(isValid('{{}[()]}'));
 console.log(isValid('{{}[]]'));
 console.log(isValid('{{}[())]]'));
+console.log(isValid('[123  <456abc>]'));

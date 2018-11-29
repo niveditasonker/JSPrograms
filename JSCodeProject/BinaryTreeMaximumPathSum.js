@@ -33,7 +33,7 @@ function findMaxTreePath(root){
     	var leftVal = Math.max(0,getMaxPath(node.left));
     	var rightVal = Math.max(0,getMaxPath(node.right));
     	
-    	maxPath = Math.max(maxPath, (leftVal+rightVal+root.val));
+    	maxPath = Math.max(maxPath, (leftVal+rightVal+node.val));
     	
     	return Math.max(node.val+leftVal, node.val+rightVal);
     }
