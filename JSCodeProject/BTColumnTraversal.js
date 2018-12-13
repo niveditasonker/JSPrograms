@@ -3,6 +3,10 @@ function TreeLinkNode(val) {
      this.left = this.right = null;
 }
 
+function TreeColumnNode(col, node) {
+    this.col = col;
+    this.treeNode = node;
+}
 
 var verticalOrder = function(root) {
 	var res = [];
@@ -59,6 +63,52 @@ var verticalOrder = function(root) {
 	
 }
 
+var verticalOrder2 = function(root) {
+    let col = 0;
+    let node = root;
+    let queue = [];
+    let result = [];
+    let map = {};
+    let min = 0;
+    let max = 0;
+    
+    if (!node) {
+        return result;
+    }
+    
+    queue.push([0, root]);
+    
+    while (queue.length > 0) {
+        const node = queue.shift();
+        
+        var nvalue = node[1];
+		var order = node[0];
+//		console.log(order, nvalue);
+        if (map[order] === undefined) {
+            map[order] = [];
+        }
+        
+        map[order].push(nvalue);
+        
+        if (node.left) {
+            queue.push(order - 1, node.left);
+            min = Math.min(min, order - 1);
+        }
+        
+        if (node.right) {
+            queue.push(order + 1, node.right);
+            max = Math.max(max, order + 1);
+        }
+    }
+//    console.log(map);
+    
+    for (let i = min; i <= max; i++) {
+    	console.log(map[i]);
+        result.push(map[i].val);
+    }
+    
+    return result;
+};
 
 var n1 = new TreeLinkNode(3);
 var n2 = new TreeLinkNode(9);
@@ -76,3 +126,4 @@ n3.left = n6;
 n3.right = n7;
 
 console.log(verticalOrder(n1));
+//console.log(verticalOrder2(n1));

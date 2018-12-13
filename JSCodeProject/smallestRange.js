@@ -12,6 +12,7 @@ class PriorityQueue {
   }
 
   insert(val, priority) {
+//	  console.log(val, priority);
     const newNode = new Node(val, priority);
     if (!this.first || priority < this.first.priority) {
       newNode.next = this.first;
@@ -52,6 +53,7 @@ var smallestRange = function(nums) {
   }
 
   // initialize the answers with priority q's min and current max;
+  console.log(q.peek().val.num);
   let ansMin = q.peek().val.num;
   let ansMax = max;
 

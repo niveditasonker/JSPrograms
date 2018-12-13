@@ -28,7 +28,7 @@ var multiply = function(A, B) {
 		   if(A[i][k] != 0){
 			   for(var j=0;j<colBLen;j++){
 				   if(B[k][j] !== 0) {
-					   res[i][j] += A[i][k] * B[i][k];
+					   res[i][j] += A[i][k] * B[k][j];
 				   }
 			   }
 		   }

@@ -12,7 +12,7 @@ var allPathsSourceTarget = function(graph) {
 
 function dfs(graph, node,res,path){
 	if(node==graph.length-1){
-		console.log("Node: ",node);
+		console.log("Node: ",node, path.slice());
 		res.push(path.slice(0));
 		return;
 	}
@@ -20,10 +20,12 @@ function dfs(graph, node,res,path){
 	console.log(graph[node]);
 	
 	for (nextNode of graph[node]) {
-		console.log("NextNode: ",graph[node][nextNode],nextNode);
+		console.log("NextNode: ",graph[node][nextNode],".....",nextNode);
 		path.push(nextNode);
 	    dfs(graph, nextNode, res, path);
+	    console.log("Path: ",path,".....",nextNode);
 	    path.pop();
+	    console.log("Path->2: ",path,".....",nextNode);
 	}
 }
 

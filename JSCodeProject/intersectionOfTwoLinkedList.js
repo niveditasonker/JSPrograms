@@ -22,11 +22,13 @@ sll.head = new Node(3);
 sll.head.next = new Node(4);
 sll.head.next.next = new Node(2);
 sll.head.next.next.next = new Node(7);
+//sll.head.next.next.next = ll.head.next.next.next;
 
 var getIntersectionNode = function(headA, headB) {
   var lenA = getLen(headA);
   var lenB = getLen(headB);
 
+  console.log(lenA, lenB);
   while(lenA > lenB){
     headA = headA.next;
     lenA--;
@@ -37,8 +39,11 @@ var getIntersectionNode = function(headA, headB) {
     lenB--;
   }
 
+  console.log(lenA, lenB);
   while(lenA && lenB){
+	
     if(headA == headB){
+    	console.log("In here...");
       return headA;
     }
   

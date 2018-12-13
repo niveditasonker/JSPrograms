@@ -31,5 +31,28 @@ var maxSubArray = function(nums) {
     return maxSum;
 };
 
+
+var maxSubArrayWithIdx = function(nums) {
+    var sum = 0;
+    var maxSum = -Infinity;
+    var res = [];
+    
+    for(var i = 0; i < nums.length; i++){
+        sum += nums[i];
+//        maxSum = Math.max(maxSum, sum);
+        if(sum > maxSum){
+        	res.push(nums[i]);
+        	maxSum = sum;
+        }
+        
+        if(sum < 0){
+            sum = 0;
+        }
+    }
+    
+    console.log(res);
+    return maxSum;
+};
 console.log(maxSubArr(arr));
 console.log(maxSubArray(arr));
+//console.log(maxSubArrayWithIdx(arr));

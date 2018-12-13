@@ -45,6 +45,22 @@ var righSideView = function(root){
 	return result;
 }
 
+var rightSideView = function(root) {
+	  var res= [];
+	  
+
+	  dfs(root,0,res);
+	  return res;
+
+	  function dfs(node, level, final){
+	      if(node==null) return;
+	      if(level==final.length) final.push(node.val);
+	      
+	      dfs(node.right,level+1,final);
+	      dfs(node.left,level+1,final);
+	  }
+};
+
 var n1 = new TreeLinkNode(3);
 var n2 = new TreeLinkNode(9);
 var n3 = new TreeLinkNode(20);
@@ -74,3 +90,4 @@ n3.right = n7;
 
 
 console.log(righSideView(n1));
+console.log(rightSideView(n1));

@@ -26,4 +26,4 @@ var countAndSay = function(n) {
     return cur;   
 };
 
-console.log(countAndSay(4));
+console.log(countAndSay(6));

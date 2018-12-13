@@ -13,7 +13,7 @@ function parseString(s){
 	for(let ch of s){
 //		console.log(ch);
 		if(ch=='(' || ch =='[' || ch=='{' || ch==')' || ch==']' || ch=='}'){
-			if(s.lenght-1>idx && s.charAt(idx+1)==ch){
+			if(s.length-1>idx && s.charAt(idx+1)==ch){
 				stringBuffer += ch;
 				idx = idx+2;
 				continue;

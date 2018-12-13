@@ -86,7 +86,7 @@ LinkedList.prototype.removeNode = function(head,n){
     }
     
     n2.next = n2.next.next;
-    
+//    console.log(dummy);
     return dummy.next;
 
 }

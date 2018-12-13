@@ -26,6 +26,7 @@ var myAtoi = function(str) {
 		var curr = parseInt(str.charAt(i));
 		
 		if(!isNaN(curr)){
+			console.log("...",curr, res);
 			res = res*10 + curr;
 			if(!numStarted){
 				numStarted = true;
@@ -40,9 +41,14 @@ var myAtoi = function(str) {
 function getResult(isNeg, result){
 	result = isNeg?result*(-1):result;
 	
+	console.log(result, Number.MAX_VALUE,Number.MIN_VALUE );
 	if(result > 2147483647) result =  2147483647;
 	else if(result < -2147483647) result =  -2147483647;
 	
+//	if(result > Number.MAX_VALUE) result =  Number.MAX_VALUE;
+//	else if(result < Number.MIN_VALUE) result =  Number.MIN_VALUE;
+	
+	console.log(result);
 	return result;
 }
 console.log(myAtoi(gvnStr));

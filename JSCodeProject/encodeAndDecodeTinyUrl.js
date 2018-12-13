@@ -27,5 +27,7 @@ var decode = function(shortUrl) {
     return hash[id];
 };
 
- console.log(encode("https://leetcode.com/problems/design-tinyurl"));
+//console.log(encode("https://leetcode.com/problems/design-tinyurl"));
+ var url = encode("https://leetcode.com/problems/design-tinyurl");
+ console.log(".....",url);
  console.log(decode("http://tinyurl.com/cbxAri"));

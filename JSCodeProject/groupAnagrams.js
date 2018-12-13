@@ -46,7 +46,9 @@ var groupAnagrams2 = function(strs) {
     if(strs.length == 0) return [];
     const result = new Map();
     const primes = [2, 3, 5, 7, 11 ,13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 107];
-    const getKey = str => {
+    
+    function getKey(str){
+//    const getKey = str => {
         let key = 1;
         for(let i = 0; i < str.length; i++){
 //        	console.log("....",primes[str.charCodeAt(i) - 97],str.charCodeAt(i) );
@@ -64,6 +66,7 @@ var groupAnagrams2 = function(strs) {
         }
        
     });
+//    console.log(...result.values());
     return [...result.values()];
 };
 console.log(groupAnagrams(input));

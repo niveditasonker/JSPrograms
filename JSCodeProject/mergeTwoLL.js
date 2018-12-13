@@ -134,4 +134,34 @@ LinkedList.prototype.mergeTwoLL2 = function(l1,l2){
     return temp;
 }
 
+
+var mergeTwoLists = function(l1, l2) {
+    var p1 = l1;
+    var p2 = l2;
+    var fn = new Node(-1);
+    var p = fn;
+    
+    
+    while(p1 && p2){
+        if(p1.val >= p2.val){
+            p.next = p2;
+            p2 = p2.next;
+        } else {
+            p.next = p1;
+            p1 = p1.next;
+        }
+        p = p.next;
+    }
+    
+    if(p1){
+        p.next = p1;
+    } else {
+        p.next = p2;
+    }
+    
+    return fn.next;
+};
+
+console.log(mergeTwoLists(fll.head, sll.head));
+
 //console.log(mergeTwoLL2(fll.head,sll.head));
