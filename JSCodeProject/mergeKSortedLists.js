@@ -49,16 +49,17 @@ var mergeKLists = function(lists) {
 			temp.next=l2;
 		}
 		
-		temp = data.next;
-		data.next = null;
-		
-		console.log(temp);
-		return temp;
-
+//		temp = data.next;
+//		data.next = null;
+//		
+//		console.log(temp);
+//		return temp;
+        temp = temp.next;
+        return data.next;
 
 	}
-	console.log("..........1");
+//	console.log("..........1");
 	return merge(0,lists.length-1,lists);
 }
 
-mergeKLists(inp); //n*log(k); If n is num of nodes/list, then n*k*log(k);
+console.log(mergeKLists(inp)); //n*log(k); If n is num of nodes/list, then n*k*log(k);

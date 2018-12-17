@@ -15,7 +15,7 @@ function longestSubPalindromeDP(s){
 		}
 		dp.push(temp);
 	}
-//	console.log(dp);
+	console.log(dp);
 	
 	for(var i=0;i<sLen;i++){
 		for(var j=i;j>=0;j--){
