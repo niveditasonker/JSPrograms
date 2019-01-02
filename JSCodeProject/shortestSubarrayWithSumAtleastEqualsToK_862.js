@@ -5,7 +5,7 @@ var shortestSubarray = function(A, K) {
     var min = -1;
     var dist = new Array(A.length);
     for(let i =0;i<A.length;i++){
-    	dist[i] = findShortDist(A,k,i);
+    	dist[i] = findShortDist(A,K,i);
     	if((dist[i] > 0) && (dist[i]< min || min == -1)){
     		min = dist[i];
     	}
