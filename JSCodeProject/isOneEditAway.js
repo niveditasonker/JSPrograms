@@ -1,7 +1,11 @@
 var str1 = "pale";
 var str2 = "paless";
-
+var word1 = "horse", word2 = "ros";
+var s = "1203", t = "1213";
 console.log(isOneEditAway(str1, str2));
+console.log(isOneEditAway(word1, word2));
+console.log(isOneEditAway(s, t));
+
 function isOneEditAway(s1, s2){
 	var l1 = s1.length;
 	var l2 = s2.length;

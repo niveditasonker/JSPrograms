@@ -32,6 +32,7 @@ function getString(digits, temp, result, map){
             arr[i] = temp[i];
         }
    
+//        result.push(temp.join(''));
 		result.push(arr.join(''));
 //		console.log("R ",result);
 		return;
@@ -96,4 +97,4 @@ function getPossibilities(digits, dials, outPut, pos, res) {
 
 
 var digits1 = "23";
-console.log(letterCombinations(digits));
+//console.log(letterCombinations(digits));

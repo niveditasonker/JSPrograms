@@ -71,3 +71,4 @@ ll.printList();
 //ll.reverseList();
 //ll.printList();
 console.log(ll.arePalindrome());
+

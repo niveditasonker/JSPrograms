@@ -18,7 +18,7 @@ var nextClosestTime = function(time) {
 
     function dfs(digits, curr, pos, tgt){
       if(pos==4){
-        console.log(curr);
+//        console.log(curr);
         min = parseInt(curr.substring(0,2))*60 + parseInt(curr.substring(2,4));
         if(min==tgt) return;
 

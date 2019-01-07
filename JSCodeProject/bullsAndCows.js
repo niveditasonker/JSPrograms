@@ -13,7 +13,7 @@ var getHint = function(secret, guess) {
     
     for(let i=0;i<secret.length;i++){
 //    	repeatCount[s.charCodeAt(i)-'A'.charCodeAt(0)]++;
-//    	console.log(secret.charCodeAt(i),'0'.charCodeAt(0));
+    	console.log(secret.charCodeAt(i),'0'.charCodeAt(0));
         map[secret.charCodeAt(i)-'0'.charCodeAt(0)] = map[secret.charCodeAt(i)-'0'.charCodeAt(0)] || 0;
         map[secret.charCodeAt(i)-'0'.charCodeAt(0)]++;
     }

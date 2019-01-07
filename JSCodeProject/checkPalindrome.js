@@ -1,13 +1,29 @@
 var str= "nitin";
 var str = "A man, a plan, a canal: Panama";
+var str = "race a car";
 
-console.log(isPalindrome(str));
-//var t = checkPalindrome(str);
-//console.log(t);
-//console.log(isPalin(str));
 
-function isPalindrome(strn){
-	
+
+//Prefer this one:
+var isPalindrome = function(s) {
+	  s = s.replace(/[^a-z0-9]/gi,'').toLowerCase()
+	  if (!s.length) return true
+	  
+	  let i = 0
+	  let j = s.length - 1
+	  
+	  while (i < j) 
+	    if (s[j--] !== s[i++]) return false
+	  
+	  return true
+}
+console.log(isPalindrome("nitin"));
+console.log(isPalindrome("A man, a plan, a canal: Panama"));
+console.log(isPalindrome("race a car"));
+
+//.........
+function isPalindromeOld(strn){
+	console.log(strn);
 	var len = Math.floor(strn.length/2);
 //	console.log(len);
 	for(var i=0;i<len;i++){
@@ -45,11 +61,10 @@ function isPalin(str){
 }
 
 
-var input = "aba";
-//var input = "abca";
-console.log(validPalindrome(input));
+
 
 function validPalindrome(input){
+	console.log("......",input);
 	var end = input.length -1;
 	var beg = 0;
 
@@ -96,7 +111,15 @@ var isPalindromeNum = function(x) {
     return (x - reverse) === 0 ? true : false;
 };
 
-console.log(isPalindromeNum(-121));
+
+var input = "aba";
+//var input = "abca";
+//console.log(validPalindrome(input));
+//console.log(validPalindrome(str));
+//console.log(isPalindromeNum(-121));
+//console.log(isPalindromeOld(str));
+
+
 
 
 //console.log(isNumber(0));

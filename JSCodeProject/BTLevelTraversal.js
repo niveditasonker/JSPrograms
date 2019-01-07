@@ -3,37 +3,7 @@ function TreeLinkNode(val) {
     this.left = this.right = this.next = null;
 }
 
-var connect = function(root){
-	if(root == null){
-		return;
-	}
-	
-	var arr = [];
-	var dummy = new TreeLinkNode(null);
-	arr.push(root);
-	arr.push(dummy);
-	while(arr.length > 1){
-		var curr = arr.shift();
-		if(curr !== dummy){
-			if(curr.left){
-				arr.push(curr.left);
-			}
-			
-			if(curr.right){
-				arr.push(curr.right);
-			}
-		}else{
-			arr.push(curr);
-//			console.log("["+root.val+"]");
-				
-			for(var i=0; i<arr.length-1;i++){
-				if(arr[i+1]!=dummy){			
-					console.log("["+arr[i].val+","+arr[i+1].val+"]");
-				}
-			}
-		}
-	}
-}
+
 
 var BTLevelOrder = function(root){
 	var result = [];
@@ -65,6 +35,45 @@ var BTLevelOrder = function(root){
 	return result;
 }
 
+var levelOrder2 = function(root) {
+    var result = [];
+    
+    if(root === null){
+        return result;
+    }
+    
+    var queue = [];
+    var temp = [];
+    var curLvlCnt = 1;
+    var nextLvlCnt = 0;
+    
+    queue.push(root);
+    
+    while(queue.length !== 0){
+        var p = queue.shift();
+        temp.push(p.val);
+        curLvlCnt--;
+        
+        if(p.left){
+            queue.push(p.left);
+            nextLvlCnt++;
+        }
+        if(p.right){
+            queue.push(p.right);
+            nextLvlCnt++;
+        }
+        
+        if(curLvlCnt === 0){
+            result.push(temp);
+            curLvlCnt = nextLvlCnt;
+            nextLvlCnt = 0;
+            temp = [];
+        }
+    }
+    
+    return result;
+};
+
 
 var n1 = new TreeLinkNode(3);
 var n2 = new TreeLinkNode(9);
@@ -83,3 +92,4 @@ n3.right = n7;
 
 //connect(n1);
 console.log(BTLevelOrder(n1));
+console.log(levelOrder2(n1));

@@ -76,38 +76,49 @@ var verticalOrder2 = function(root) {
         return result;
     }
     
-    queue.push([0, root]);
+    queue.push(new TreeColumnNode(0, root));
     
     while (queue.length > 0) {
         const node = queue.shift();
         
-        var nvalue = node[1];
-		var order = node[0];
-//		console.log(order, nvalue);
-        if (map[order] === undefined) {
-            map[order] = [];
+        if (map[node.col] === undefined) {
+            map[node.col] = [];
         }
         
-        map[order].push(nvalue);
+        map[node.col].push(node.treeNode.val);
         
-        if (node.left) {
-            queue.push(order - 1, node.left);
-            min = Math.min(min, order - 1);
+        if (node.treeNode.left) {
+            queue.push(new TreeColumnNode(node.col - 1, node.treeNode.left));
+            min = Math.min(min, node.col - 1);
         }
         
-        if (node.right) {
-            queue.push(order + 1, node.right);
-            max = Math.max(max, order + 1);
+        if (node.treeNode.right) {
+            queue.push(new TreeColumnNode(node.col + 1, node.treeNode.right));
+            max = Math.max(max, node.col + 1);
         }
     }
-//    console.log(map);
     
     for (let i = min; i <= max; i++) {
-    	console.log(map[i]);
-        result.push(map[i].val);
+        result.push(map[i]);
     }
     
     return result;
+};
+
+var verticalOrder3 = function(root) {
+    if (!root) return [];
+    let myQ = [[root, 0]], myMap = {};
+    while (myQ.length !== 0) {
+        let [node, i] = myQ.shift();
+        myMap[i] === undefined ? myMap[i] = [node.val] : myMap[i].push(node.val);
+        if (node.left){
+        	myQ.push([node.left, i-1]);
+        }
+        if (node.right){
+        	myQ.push([node.right, i+1]);
+        }
+    }
+    return Object.keys(myMap).sort((k1, k2) => k1 - k2).map(k => myMap[k]);
 };
 
 var n1 = new TreeLinkNode(3);
@@ -126,4 +137,5 @@ n3.left = n6;
 n3.right = n7;
 
 console.log(verticalOrder(n1));
-//console.log(verticalOrder2(n1));
+console.log(verticalOrder2(n1));
+console.log(verticalOrder3(n1));

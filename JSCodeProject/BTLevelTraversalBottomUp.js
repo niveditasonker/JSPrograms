@@ -3,41 +3,6 @@ function TreeLinkNode(val) {
     this.left = this.right = this.next = null;
 }
 
-var connect = function(root){
-	if(root == null){
-		return;
-	}
-	var arr = [];
-	var dummy = new TreeLinkNode(null);
-	arr.push(root);
-	arr.push(dummy);
-	while(arr.length > 1){
-		var curr = arr.shift();
-//		console.log(curr);
-		if(curr != dummy){
-			if(curr.left){
-				arr.push(curr.left);
-			}
-			
-			if(curr.right){
-				arr.push(curr.right);
-			}
-		}else{
-			arr.push(curr);
-			for(var i=0; i<arr.length-1;i++){
-//				console.log(arr[i],arr[i+1]);
-			
-				if(arr[i+1]!=dummy){	
-					console.log("["+arr[arr.length-1-i].val+","+arr[arr.length-2-i].val+"]");
-//					console.log("["+arr[i].val+","+arr[i+1].val+"]");
-				}
-			}
-		}
-	
-	}
-}
-
-
 
 var levelOrderBottom = function(root) {
     var q = [];

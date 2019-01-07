@@ -45,6 +45,30 @@ function rec_coins_dynamic(target,coins,res){
 	return min_coins;
 }
 
+var coinChange = function(coins, amount) {
+    
+    var i = 0,
+        arr = Array(amount+1).fill(Number.MAX_VALUE),
+        len = coins.length,
+        j;
+    
+    // while (i <= amount) {
+    //     arr.push(Number.MAX_VALUE);
+    //     i++;
+    // }
+    
+    arr[0] = 0;
+    
+    for (i = 0; i < len; i++) {
+        for (j = coins[i]; j <= amount; j++) {
+            arr[j] = Math.min(arr[j], arr[j - coins[i]] + 1);
+        }
+    }
+    
+    return arr[amount] === Number.MAX_VALUE? -1 : arr[amount];
+};
+
+console.log(coinChange(arr,70));
 console.log(rec_coins_dynamic(70,arr,{}));
 console.log(rec_coins(63,arr));
 

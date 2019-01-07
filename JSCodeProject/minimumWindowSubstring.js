@@ -61,4 +61,47 @@ var minWindow = function(s, t) {
     return windowBeg !== -1 ? s.substring(windowBeg, windowEnd + 1) : '';
 };
 
+
+function minWindow2(s, t) {
+	  let map = {};
+//	  t.split('').forEach(c => map[c] = (map[c] || 0) + 1);
+	  
+	  for(let i=0;i<t.length;i++){
+		  let c = t.charAt(i);
+		  map[c] = (map[c] || 0) + 1
+	  }
+
+	  let count = t.length;   // remaining matching count
+
+	  let l = 0;
+	  let r = 0;
+
+	  let start = 0;
+	  let minLen = Infinity;
+
+	  while (r < s.length) {
+		  console.log("r: ",r,s[r], map[s[r]]);
+//		  if (map[s[r++]]-- > 0){
+		  if (map[s[r++]]-- > 0){
+	    	count--;
+	    }
+//		  r++; map[s[r]]--;
+	    console.log("r2: ",r,s[r],map[s[r]]);
+
+	    while (count === 0) {   // valid
+	      if (r - l < minLen) {
+	        minLen = r - l;
+	        start = l;
+	      }
+
+	      if (map[s[l++]]++ === 0) count++; // make it invalid
+//	      if (map[s[l]] === 0) count++; // make it invalid
+	    }
+	  }
+
+	  return minLen === Infinity ? '' : s.substr(start, minLen);
+	}
 console.log(minWindow(S,T));
+console.log(minWindow2(S,T));
+
+//https://leetcode.com/explore/interview/card/google/63/sorting-and-searching-4/345/discuss/26805/Accepted-O(n)-solution

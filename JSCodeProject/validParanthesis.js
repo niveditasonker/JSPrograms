@@ -17,7 +17,8 @@ function isValid(s) {
         if (map[curr]!=null) {
             stack.push(curr);
 //            console.log(stack);
-        } else if (checkValue(map,curr)) {
+//        } else if (checkValue(map,curr)) {
+        } else if (Object.values(map).indexOf(curr) > -1) {
             if (stack.length != 0 && map[stack[stack.length-1]] == curr) {
                 stack.pop();
             } else {

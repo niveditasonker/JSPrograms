@@ -68,7 +68,7 @@ var convertToLL2 = function(root){
 			nextQ.push(curr.left);
 		}
 		
-		if(curr.rigth != null){
+		if(curr.right != null){
 			nextQ.push(curr.right);
 		}
 		

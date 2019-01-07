@@ -41,6 +41,7 @@ function findKthLargest(nums, k){
 	
 	while(start<end){
 		let pivot = partition(nums,start,end);
+		console.log("pivot:",pivot);
 		if(pivot < idx){
 			start = pivot + 1;
 		}else if(pivot > idx){
@@ -58,8 +59,14 @@ function partition(nums,s,e){
 	let temp;
 	
 	while(s <= e){
-		while(s<=e && nums[s] <= nums[pvt]) s++;
-		while(s<=e && nums[e] > nums[pvt]) e--;
+		while(s<=e && nums[s] <= nums[pvt]){
+			console.log("s:",s);
+			s++;
+		}
+		while(s<=e && nums[e] > nums[pvt]){
+			console.log("e:",e);
+			e--;
+		}
 		if(s>e) break;
 		temp = nums[s];
 		nums[s] = nums[e];
@@ -73,5 +80,6 @@ function partition(nums,s,e){
 	return e;
 }
 
-var num = [3,2,3,1,2,4,5,6];
+//var num = [3,2,3,1,2,4,5,6];
+var num = [3,2,3,1,2,4,5,5,6];
 console.log(".......",findKthLargest(num, 2));
